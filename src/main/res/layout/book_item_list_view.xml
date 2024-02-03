@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/bookItemImageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/ic_launcher_background"
+            android:elevation="4dp"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/bookItemName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="Naslov knjige"
+            android:textSize="24sp"
+            android:textColor="#000000"
+            android:drawableLeft="@drawable/baseline_book_24"
+            android:drawablePadding="8dp"
+            android:elevation="2dp" />
+
+        <RatingBar
+            android:id="@+id/bookItemRating"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:isIndicator="false"
+            android:numStars="5"
+            android:rating="4.5"
+            android:stepSize="0.5" />
+
+        <TextView
+            android:id="@+id/bookItemAuthor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Autor"
+            android:drawableLeft="@drawable/baseline_person_pin_24"
+            android:drawablePadding="8dp" />
+
+        <TextView
+            android:id="@+id/bookItemGenre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Žanr"
+            android:drawableLeft="@drawable/baseline_chat_24"
+            android:drawablePadding="8dp" />
+
+        <TextView
+            android:id="@+id/bookItemYear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Godina"
+            android:drawableLeft="@drawable/baseline_calendar_month_24"
+            android:drawablePadding="8dp" />
+
+        <TextView
+            android:id="@+id/bookItemCharacters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Likovi"
+            android:drawableLeft="@drawable/baseline_people_outline_24"
+            android:drawablePadding="8dp"/>
+
+        <TextView
+            android:id="@+id/bookItemDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Opis"
+            android:drawableLeft="@drawable/baseline_description_24"
+            android:drawablePadding="8dp"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

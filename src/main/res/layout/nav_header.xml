@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_horizontal">
+
+    <!-- Profile Image -->
+    <ImageView
+        android:id="@+id/user_profile_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_profile_placeholder"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- First Name -->
+    <TextView
+        android:id="@+id/user_firstlastname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Firstname Lastname"
+        android:layout_marginBottom="8dp"/>
+</LinearLayout>

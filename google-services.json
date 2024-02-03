@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "102675100696",
+    "firebase_url": "https://libraryapp-d7704-default-rtdb.firebaseio.com",
+    "project_id": "libraryapp-d7704",
+    "storage_bucket": "libraryapp-d7704.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:102675100696:android:c7519d0ffb21ef7fe4ff6d",
+        "android_client_info": {
+          "package_name": "ba.sum.fpmoz.knjige"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJk2usYjKzvy6ylrJZTGSOIQPiTR9FbSI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:102675100696:android:fa02564dc637cd81e4ff6d",
+        "android_client_info": {
+          "package_name": "ba.sum.fpmoz.libraryapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJk2usYjKzvy6ylrJZTGSOIQPiTR9FbSI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

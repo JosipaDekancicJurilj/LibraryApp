@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_profile"
+        android:title="Profil"
+        android:icon="@drawable/ic_profile" /> <!-- Reference to your profile icon -->
+
+    <item
+        android:id="@+id/nav_books"
+        android:title="Zanimljive knjige"
+        android:icon="@drawable/baseline_book_online_24" />
+
+    <item
+        android:id="@+id/nav_logout"
+        android:title="Odjava"
+        android:icon="@drawable/ic_logout" /> <!-- Reference to your logout icon -->
+
+</menu>

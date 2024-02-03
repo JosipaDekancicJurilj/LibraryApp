@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">LibraryApp</string>
+    <string name="navigation_drawer_open">Otvori</string>
+    <string name="navigation_drawer_close">Zatvori</string>
+    <string name="login_button_text">Prijava na sustav</string>
+    <string name="password_hint">Unesite lozinku</string>
+    <string name="email_hint">Unesite email adresu</string>
+    <string name="prompt_gender">Unesite spol</string>
+    <string name="logo_desc">LibraryApp\n</string>
+</resources>
