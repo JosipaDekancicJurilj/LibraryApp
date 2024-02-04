@@ -114,7 +114,8 @@ public class MainActivity extends AppCompatActivity {
 
         storageReference = FirebaseStorage.getInstance().getReference();
 
-        selectImageButton.setOnClickListener(v -> openFileChooser());
+        Button selectImageButton;
+        selectImageButton = findViewById(R.id.btnSelectImage);
 
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -222,28 +223,84 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
-                firstnameTxt.setText(user.firstname);
-                lastnameTxt.setText(user.lastname);
-                dateOfBirthTxt.setText(user.dateOfBirth);
-                cityTxt.setText(user.city);
-                countryTxt.setText(user.country);
-                if ("Muško".equalsIgnoreCase(user.gender)) {
-                    spinnerGender.checkInputConnectionProxy(findViewById(R.id.spinnerGender));
-                } else if ("Žensko".equalsIgnoreCase(user.gender))
-                    spinnerGender.checkInputConnectionProxy(findViewById(R.id.spinnerGender));
-                else if ("Nije specificirano".equalsIgnoreCase(user.gender)) {
-                    spinnerGender.checkInputConnectionProxy(findViewById(R.id.spinnerGender));
+                if (user != null) {
+                    firstnameTxt.setText(user.firstname);
+                } else {
+                    // Obavijestite korisnika ili dodajte dodatnu logiku ako se objekt user vraća kao null.
                 }
-                Picasso.get()
-                        .load(user.profileImageUrl)
-                        .into(selectImageButton);
+                if (user != null) {
+                    // Provjerite da li je svojstvo lastname null prije postavljanja teksta
+                    if (user.lastname != null) {
+                        lastnameTxt.setText(user.lastname);
+                    } else {
+                        // Obavijestite korisnika ili dodajte dodatnu logiku ako je svojstvo lastname null
+                    }
+                } else {
+                    // Obavijestite korisnika ili dodajte dodatnu logiku ako je objekt user null
+                }
+                if (user != null) {
+                    // Provjerite da li je svojstvo dateOfBirth null prije postavljanja teksta
+                    if (user.dateOfBirth != null) {
+                        dateOfBirthTxt.setText(user.dateOfBirth);
+                    } else {
+                        // Obavijestite korisnika ili dodajte dodatnu logiku ako je svojstvo dateOfBirth null
+                    }
+                } else {
+                    // Obavijestite korisnika ili dodajte dodatnu logiku ako je objekt user null
+                }
+                // Provjerite je li objekt user null prije pristupa svojstvima
+                if (user != null) {
+                    // Postavite grad korisnika ako nije null
+                    if (user.city != null) {
+                        cityTxt.setText(user.city);
+                    } else {
+                        // Obavijestite korisnika ili dodajte dodatnu logiku ako je svojstvo city null
+                    }
 
-                Picasso.get()
-                        .load(user.profileImageUrl)
-                        .into(navigationUserImage);
+                    // Postavite državu korisnika ako nije null
+                    if (user.country != null) {
+                        countryTxt.setText(user.country);
+                    } else {
+                        // Obavijestite korisnika ili dodajte dodatnu logiku ako je svojstvo country null
+                    }
 
-                navigationUserFullName.setText(user.firstname + " " + user.lastname);
+                    // Provjerite spol korisnika i postavite odgovarajući odabir u spinneru
+                    if ("Muško".equalsIgnoreCase(user.gender)) {
+                        spinnerGender.setSelection(0); // Muško
+                    } else if ("Žensko".equalsIgnoreCase(user.gender)) {
+                        spinnerGender.setSelection(1); // Žensko
+                    } else if ("Nije specificirano".equalsIgnoreCase(user.gender)) {
+                        spinnerGender.setSelection(2); // Nije specificirano
+                    }
+                } else {
+                    // Obavijestite korisnika ili dodajte dodatnu logiku ako je objekt user null
+                }
+                if (user != null) {
+                    // Provjerite je li svojstvo profileImageUrl null prije korištenja
+                    if (user.profileImageUrl != null) {
+                        // Učitajte sliku korisnika koristeći Picasso ili drugu biblioteku za učitavanje slika
+                        Picasso.get()
+                                .load(user.profileImageUrl)
+                                .into(selectImageButton);
+                } else {
+                    // Obavijestite korisnika ili dodajte dodatnu logiku ako je svojstvo profileImageUrl null
+                }
+            } else {
+                // Obavijestite korisnika ili dodajte dodatnu logiku ako je objekt user null
             }
+            if (user != null) {
+                // Provjerite je li svojstva firstname i lastname null prije korištenja
+                if (user.firstname != null && user.lastname != null) {
+                    // Postavite tekst u navigationUserFullName ako su svojstva firstname i lastname dostupna
+                    navigationUserFullName.setText(user.firstname + " " + user.lastname);
+                } else {
+                    // Obavijestite korisnika ili dodajte dodatnu logiku ako su svojstva firstname i lastname null
+                }
+            } else {
+                // Obavijestite korisnika ili dodajte dodatnu logiku ako je objekt user null
+            }
+                
+        }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
